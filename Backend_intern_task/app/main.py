@@ -8,8 +8,8 @@ models.Base.metadata.create_all(bind=database.engine)
 
 @app.get("/")
 def read_root(db: Session = Depends(database.get_db)):
-    users = crud.get_all_users(db)  # Fetch users from the database
-    return {"users": users}  # Return user information
+    users = crud.get_all_users(db)  
+    return {"users": users}  
 
 @app.post("/users/", response_model=schemas.UserResponse)
 def create_user(user: schemas.UserCreate, db: Session = Depends(database.get_db)):

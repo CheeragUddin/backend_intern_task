@@ -18,7 +18,7 @@ class Expense(Base):
     id = Column(Integer, primary_key=True, index=True)
     description = Column(String, index=True)
     total_amount = Column(Float)
-    split_method = Column(String)  # equal, exact, percentage
+    split_method = Column(String)  
     owner_id = Column(Integer, ForeignKey("users.id"))
 
     owner = relationship("User", back_populates="expenses")

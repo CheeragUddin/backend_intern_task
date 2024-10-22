@@ -18,8 +18,8 @@ class UserResponse(BaseModel):
 class ExpenseCreate(BaseModel):
     description: str
     total_amount: float
-    split_method: str  # 'equal', 'exact', 'percentage'
-    splits: List[dict]  # list of {'user_id': int, 'amount_owed': float}
+    split_method: str 
+    splits: List[dict]  
 
 class ExpenseResponse(BaseModel):
     id: int
